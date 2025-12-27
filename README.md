@@ -1,6 +1,16 @@
 # Domain Name Resolver with Caching
 This project implements a DNS client in Python that manually constructs DNS query packets, sends them to a public DNS resolver using UDP, parses the DNS response, and caches results to reduce repeated network lookups.    
 
+## Project Structure
+```
+DNS-Domain-Resolver-With-Caching/
+│
+├── DNS_client.py
+├── .gitignore
+└── README.md
+```
+
+
 ## Objective
 
 To demonstrate how DNS resolution works internally using:
@@ -34,34 +44,24 @@ To demonstrate how DNS resolution works internally using:
 - DNS response parsing
 - Domain name caching with expiration
 
----
-
 ## How to Run
-
-```bash
+```
 python DNS_client.py
-Example Output
-text
-Copy code
+```
+
+## Example Output
+```
 Enter domain name (or 'exit' to quit): google.com
-[DNS] google.com → 142.250.190.78
+[DNS] google.com → 172.217.26.110
 
-Enter domain name (or 'exit' to quit): google.com
-[CACHE] google.com → 142.250.190.78
+Enter domain name (or 'exit' to quit): facebook.com
+[DNS] facebook.com → 57.144.40.1
+```
 
-Enter domain name (or 'exit' to quit): openai.com
-[DNS] openai.com → 104.18.12.123
-Key Concepts Demonstrated
-UDP socket programming
+## Key Concepts Demonstrated
 
-DNS protocol basics
-
-Binary packet parsing
-
-Timeout and error handling
-
-Caching mechanisms
-
-yaml
-Copy code
-
+- UDP socket programming
+- DNS protocol internals
+- Binary packet parsing
+- Timeout and error handling
+- Caching mechanisms for network optimization
